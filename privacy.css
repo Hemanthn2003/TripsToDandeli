@@ -1,0 +1,269 @@
+:root {
+  --colour-one: #2C5F2D;
+  --colour-two: #97BC62FF;
+  --bgcolor: #f5f5f5;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--bgcolor);
+}
+
+/* ===== HEADER ===== */
+.policy-header {
+  background: var(--colour-one);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.policy-header .logo {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+/* Desktop nav */
+.desktop-nav {
+  display: flex;
+}
+
+.desktop-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.desktop-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.desktop-nav a:hover {
+  color: var(--colour-two);
+}
+
+/* Hamburger menu for mobile */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+/* Mobile menu */
+#mobile-menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 15px;
+  background: var(--colour-one);
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: max-height 0.3s ease;
+  overflow: hidden;
+  max-height: 0; /* hidden */
+}
+#mobile-menu.active {
+  display: block;
+  max-height: 500px; /* enough to show all items */
+}
+#mobile-menu ul {
+  flex-direction: column;
+  display: flex;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#mobile-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#mobile-menu a:hover {
+  color: var(--colour-two);
+}
+
+/* HERO SECTION */
+.hero-section {
+  background: url("./Images/privacyBanner.jpg") center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+  position: relative;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+}
+
+/* MAIN CONTENT */
+.policy-content {
+  max-width: 900px;
+  margin: 60px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.policy-content h3 {
+  color: var(--colour-one);
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.6rem;
+}
+
+.policy-content ul {
+  margin-left: 25px;
+}
+
+.policy-content li {
+  margin-bottom: 15px;
+}
+
+.thank-note {
+  text-align: center;
+  margin-top: 30px;
+  font-weight: 500;
+}
+
+/* FOOTER */
+.policy-footer {
+  background: var(--colour-one);
+  color: white;
+  text-align: center;
+  padding: 25px 10px;
+  margin-top: 60px;
+  box-shadow: 0 -4px 8px rgba(0,0,0,0.3);
+}
+
+.footer-links {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: white;
+  margin: 0 8px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  color: var(--colour-two);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none; /* hide desktop nav */
+  }
+
+  .menu-toggle {
+    display: flex; /* show hamburger */
+  }
+}
+.conttainerr {
+  max-width: 700px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.owner-section {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.id-image {
+  margin-top: 10px;
+}
+
+.id-img {
+  width: 200px;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+}
+
+.form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input, button {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: #25D366;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1da851;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .conttainerr {
+    padding: 15px;
+  }
+
+  .id-img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .header__container h1 {
+    font-size: 2.8rem;
+    line-height: 3.2rem;
+    text-align: center;
+  }
+}
